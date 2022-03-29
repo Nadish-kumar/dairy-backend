@@ -43,6 +43,18 @@ console.log(dbcard)
   });
 });
 
+//delete the card
+app.post("/like", (req, res) => {
+  var dbcard = req.body;
+console.log(dbcard)
+  lemon.deleteOne(dbcard, (err, data) => {
+    if (err) {
+      res.status(500).console.log(err);
+    } else {
+      res.status(201).send(data);
+    }
+  });
+});
 
 
 //get cards details
