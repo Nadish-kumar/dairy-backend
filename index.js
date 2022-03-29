@@ -31,10 +31,10 @@ app.get("/", (req, res) => {
 // });
 
 //post the form details
-app.post("/form", (req, res) => {
+app.post("/list", (req, res) => {
   var dbcard = req.body;
 console.log(dbcard)
-  lemons.create(dbcard, (err, data) => {
+  lemon.create(dbcard, (err, data) => {
     if (err) {
       res.status(500).console.log(err);
     } else {
@@ -42,6 +42,8 @@ console.log(dbcard)
     }
   });
 });
+
+
 
 //get cards details
 app.post("/cards", (req, res) => {
